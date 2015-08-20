@@ -1,5 +1,6 @@
 class TracksController < ApplicationController
-    before_action :aunthenticate_user!
+    before_action :authenticate_user!
 
-    def
+    def create
+    end
 end
