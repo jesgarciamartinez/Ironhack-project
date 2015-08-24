@@ -13,3 +13,14 @@
  *= require_tree .
  *= require_self
  */
+
+
+body {
+  background: url('background-image.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  filter: blur(20px) graysacle(100%);
+}
+

@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
 
-  resources :tracks
+  resources :tracks, only: [:create, :destroy]
   devise_for :users
   root to: "pages#index"
+  get '/profile', to: 'pages#profile'
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
