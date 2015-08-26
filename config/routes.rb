@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  resources :tracks, only: [:create, :destroy]
+  resources :tracks, only: [:create, :destroy, :update]
   devise_for :users
   root to: "pages#index"
   get '/profile', to: 'pages#profile'

@@ -7,31 +7,23 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" href="favicon.ico">
-
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-
   <%= csrf_meta_tags %>
-
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" href="favicon.ico">
-
-
-
 </head>
 <body>
 
+<p id="notice"><%= notice %></p>
+
 <%= yield %>
 
-
-
 <div class="mastfoot">
-    <div class="inner">
-        <p>A project for <a href="http://ironhack.com">Ironhack</a>, by <a href="https://es.linkedin.com/in/jesusgarciamar">Jesús García</a>.</p>
-    </div>
+  <div class="inner">
+    <p>A project for <a href="http://ironhack.com">Ironhack</a>, by <a href="https://es.linkedin.com/in/jesusgarciamar">Jesús García</a>.
+    </p>
+  </div>
 </div>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+
+<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </body>
 </html>

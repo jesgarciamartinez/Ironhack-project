@@ -1,16 +1,14 @@
 // Place all the behaviors and hooks related to the matching controller here.
 // All this logic will automatically be available in application.js.
 
+//Soundcloud API
 
 
-
+//GET Youtube videos, render in a modal, post track
 var arrayPost = [];
-
-
 $('#search-button').click(function search() {
-  event.preventDefault();
+    event.preventDefault();
     var term = $('#query').val();
-    console.log(term);
     var url = 'https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=5&q=' + term + '&type=video&videoCategoryId=Music&videoEmbeddable=true&fields=items(id%2Csnippet)&key=AIzaSyAmaBSlO90VUXHibl5ITCXXBg0ZDXavwQk'
     //var url2 = 'https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&q=cats&type=video&videoCategoryId=Music&fields=items%2Fsnippet&key=AIzaSyAmaBSlO90VUXHibl5ITCXXBg0ZDXavwQk'
     console.log(url);

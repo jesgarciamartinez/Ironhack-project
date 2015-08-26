@@ -1,14 +1,5 @@
 
-<!-- <form id="search" action="#">
-          Song
-          <input id="song" type="text" name="song" value="Roulette Dares">
-          <input type="submit" value="Send">
-</form>
 
-<input id="query" value='cats' type="text"/>
-      <button id="search-button" >Search</button>
-
-    <ul id="results"></ul> -->
 
 
     <div id="buttons">
@@ -19,7 +10,8 @@
     </div>
     <div id="search-container">
     </div>
-    <ul id="results"></ul>
+
+<ul id="results"></ul>
 
     <div class="modal fade js-modal">
   <div class="modal-dialog">
@@ -46,7 +38,7 @@
 
 
 <h1>Listing Tracks</h1>
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>Artist</th>
@@ -58,10 +50,11 @@
 
   <tbody>
     <% @tracks.each do |track| %>
-      <tr>
-        <td><%= track.artist %></td>
-        <td><%= track.title %></td>
+      <tr data-id="<%= track.id %>">
+        <td class="artist"><%= track.artist %></td>
+        <td class="title"><%= track.title %></td>
         <td><a target="_blank" href="<%= track.url %>"</a>Play</td>
+        <td><%= link_to 'Destroy', track, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
