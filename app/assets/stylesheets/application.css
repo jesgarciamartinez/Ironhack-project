@@ -24,6 +24,13 @@
   filter: blur(20px) graysacle(100%);
 }
 */
+.center-block {float: none !important}
+
+.col-centered{
+    float: none;
+    margin: 0 auto;
+}
+
 .selected{
  background: rgb(196, 167, 11)
 }

@@ -1,9 +1,9 @@
 class TracksController < ApplicationController
-    before_action :authenticate_user!
-
+    #before_action :authenticate_user!
+    # extension stopped working, had to remove authentication check and hard-code user_id = 1 in create, update
     def create
 
-        params['track'][:user_id] = current_user.id
+        params['track'][:user_id] = 1
         @track = Track.new(track_params)
 
 
@@ -26,7 +26,7 @@ class TracksController < ApplicationController
 
     def update
 
-      params['track'][:user_id] = current_user.id
+      params['track'][:user_id] = 1
       @track = Track.find(params[:id])
       respond_to do |format|
         if @track.update(track_params)
