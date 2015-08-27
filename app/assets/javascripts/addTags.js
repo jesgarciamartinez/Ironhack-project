@@ -39,7 +39,6 @@ $('#tags-input').on('propertychange change keyup paste input', function(){
           $('.typed-tags').append('<span class="label label-primary"><button type="button" class="close" data-dismiss="label">×</button>' + tag + '</span>');
         };
       };
-      console.log(tags);
     };
 });
 

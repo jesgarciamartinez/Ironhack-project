@@ -5,18 +5,24 @@ class TracksController < ApplicationController
     def create
 
         params['track'][:user_id] = 1
+
+
         @track = Track.new(track_params)
+           if @track.save
+            params[:tags].each do |tag|
+              @track.tags << Tag.find_or_create(name: tag)
+            end
+            #binding.pry
+            # @tracks = Track.where(user_id: current_user).order('DESC')
+            # thing = format.json {undo:'Track was successfully created .'}
+            # render thing
 
+            render json: @track.to_json
 
-        respond_to do |format|
-          if @track.save
-            @tracks = Track.where(user_id: current_user).order('DESC')
-            redirect_to root_path
           else
             format.html { render :index }
           end
         end
-    end
 
     def destroy
         @track = Track.find(params[:id])
