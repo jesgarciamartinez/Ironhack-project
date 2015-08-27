@@ -2,7 +2,7 @@
 
 <div class="container-fluid">
   <div class="row">
-    <div class="col-md-3 col-md-offset-3 video-container">
+    <div class="col-md-3 col-md-offset-4 video-container">
       <iframe width="560" height="310" src="https://www.youtube.com/embed/" frameborder="0" allowfullscreen></iframe>
     </div>
     <div class="col-md-12 col-md-offset-11">
@@ -101,8 +101,8 @@
                   </a>
                   <ul class="dropdown-menu dropdown-menu-right">
                     <li><a href="javascript:void(0)" class="add-tags-button">Add tags</a></li>
-                    <li><a href="javascript:void(0)">Edit track</a></li>
-                    <li><%= link_to 'Delete', track, method: :delete, remote: true, data: { confirm: 'Are you sure?' } %></li>
+                    <li><a href="javascript:void(0)" class="add-tags-button">Edit track</a></li>
+                    <li><%= link_to 'Delete track', track, method: :delete, remote: true, data: { confirm: 'Are you sure?' } %></li>
                   </ul>
                 </div>
               </td>
@@ -117,7 +117,7 @@
 <hr>
 
 <!-- update form -->
-      <div class="row">
+      <div class="row" id="update-form">
         <form class="form-inline">
           <input name="_method" type="hidden" value="patch" />
           <input value="1" type="hidden" id="track-id"/>
@@ -137,10 +137,15 @@
         </form>
       </div>
 
-
-
-
-
+<td id="add-tags-form">
+<form class="form-inline">
+  <div class="form-group">
+    <label for="tags-input">Add tags</label>
+    <input type="text" class="form-control input-sm" id="tags-input" placeholder="">
+  </div>
+  <button type="submit" class="btn btn-primary btn-xs">Add</button>
+</form>
+</td>
 
 
 <div class="modal fade js-modal">
