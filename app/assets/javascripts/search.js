@@ -48,5 +48,7 @@ $('body').on('click','.submit-button',function(event){
     var id = this.id;
     var url = '/tracks';
     $('.js-modal').modal('hide');
-    $.post(url, {track: arrayPost[id]});
+    $.post(url, {track: arrayPost[id]}, function(){
+
+    });
 });

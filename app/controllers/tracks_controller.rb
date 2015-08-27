@@ -10,7 +10,8 @@ class TracksController < ApplicationController
 
         respond_to do |format|
           if @track.save
-            format.html {redirect_to root_path, notice: 'Track was successfully created.' }
+            @tracks = Track.where(user_id: current_user).order('DESC')
+            redirect_to root_path
           else
             format.html { render :index }
           end
