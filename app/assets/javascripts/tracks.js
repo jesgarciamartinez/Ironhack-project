@@ -11,12 +11,12 @@ tracks.onSubmit = function (event) {
         method: 'POST',
         data: JSON.stringify(data),
         dataType: 'html',
-        contentType: 'application/json';
+        contentType: 'application/json'
     });
 
     tracks.onSaveSuccess = function(response){
-        $tracks.html(response)
-        $form quitar
+        // $tracks.html(response)
+        // $form quitar
     }
 
     tracks.onSaveFailure = function(err1, err2, err3){

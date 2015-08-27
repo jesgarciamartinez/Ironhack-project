@@ -25,13 +25,21 @@ $(document).not('#add-tags-form').on('click', function(event){
 var tags = [];
 
 //split tags by commas
-$("#tags-input").on("propertychange change keyup paste input", function(){
+$('#tags-input').on('propertychange change keyup paste input', function(){
     var $value = $(this).val();
     if ($value.indexOf(',') !== -1){
-      var firstTag = $value.slice(0, $value.indexOf(',')).trim();
-      var remainingTags = $value.slice($value.indexOf(',') + 1).trim();
-      tags.push(firstTag);
-      $('.typed-tags').append('<span class="label label-primary">' + firstTag + '</span>');
+      var tagArray = $value.split(',');
+      $(this).val('');
+      $(this).attr('placeholder', '');
+      for (var i = 0; i < tagArray.length; i++){
+        var tag = tagArray[i];
+        if ((/\S/.test(tag)) && tags.indexOf(tag) === -1){
+          tag.trim();
+          tags.push(tag);
+          $('.typed-tags').append('<span class="label label-primary"><button type="button" class="close" data-dismiss="label">×</button>' + tag + '</span>');
+        };
+      };
+      console.log(tags);
     };
 });
 
