@@ -1,7 +1,7 @@
 
 
 
-//GET Youtube videos, render in a modal, post track
+//GET Youtube videos, render in a modal,
 var arrayPost = [];
 $('#search-form').on('submit', function search() {
     event.preventDefault();
@@ -12,17 +12,18 @@ $('#search-form').on('submit', function search() {
     console.log(url);
     //console.log(url2);
     $.get(url, function(result) {
-        console.log(result);
         arrayPost = [];
         $('.modal-body > #results').html('');
+        $('.modal-header h3').html(term);
         for (var i = 0; i < result.items.length; i++){
           var videoTitle = result.items[i].snippet.title;
           var description = result.items[i].snippet.description;
-          var thumbnail = result.items[i].snippet.thumbnails.default.url;
+          // var thumbnail = result.items[i].snippet.thumbnails.default.url;
           var videoId = result.items[i].id.videoId;
           var videoEmbed = '<iframe width="560" height="310" src="https://www.youtube.com/embed/' + videoId +'" frameborder="0" allowfullscreen></iframe>'
-          var submitButton = '<button class="submitButton" id="' + i + '"> Add track </button>';
-          results = '<li>'+ videoEmbed +'<img src="' + thumbnail +'">' + '--' + videoTitle + '--' + description + submitButton +'</li>';
+          var submitButton = '<button class="btn btn-default btn-success submit-button col-md-4 col-md-offset-1" id="' + i + '"> Add track </button>';
+          results = '<div class="row">'+ videoEmbed +'</div>'
+                   +'<div class="row">' +  submitButton +'</div>'
           $('.modal-body > #results').append(results);
 
 
@@ -39,13 +40,13 @@ $('#search-form').on('submit', function search() {
           arrayPost.push(objectPost);
           };
         $('.js-modal').modal();
-        console.log(arrayPost);
     });
 });
 
-$('body').on('click','.submitButton',function(event){
+$('body').on('click','.submit-button',function(event){
     // var $currentTarget = event.currentTarget;
     var id = this.id;
     var url = '/tracks';
+    $('.js-modal').modal('hide');
     $.post(url, {track: arrayPost[id]});
-    });
+});
