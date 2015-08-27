@@ -1,3 +1,4 @@
+//selecting the form
 $('.update-track-button').on('click',function(event){
 
 
@@ -11,6 +12,7 @@ $(document).not('#update-track-form').on('click', function(event){
         $('#update-track-form').addClass('hidden');
 };
 
+//handling the form
 
 
 

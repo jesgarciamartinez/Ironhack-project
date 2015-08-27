@@ -117,36 +117,41 @@
 <hr>
 
 <!-- update form -->
-      <div class="row" id="update-form">
-        <form class="form-inline">
-          <input name="_method" type="hidden" value="patch" />
-          <input value="1" type="hidden" id="track-id"/>
-          <div class="form-group">
-            <label for="artist">Artist</label>
-            <input type="text" class="form-control input-sm" id="artist" placeholder="Artist">
-          </div>
-          <div class="form-group">
-            <label for="title">Title</label>
-            <input type="email" class="form-control input-sm" id="title" placeholder="Title">
-          </div>
-          <div class="form-group">
-            <label for="url">Youtube link</label>
-            <input type="email" class="form-control input-sm" id="url" placeholder="Youtube link">
-          </div>
-          <button type="submit" class="btn btn-default btn-xs"> Update Track </button>
-        </form>
-      </div>
+<div class="row" id="update-form">
+  <form class="form-inline">
+    <input name="_method" type="hidden" value="patch" />
+    <input value="1" type="hidden" id="track-id"/>
+    <div class="form-group">
+      <label for="artist">Artist</label>
+      <input type="text" class="form-control input-sm" id="artist" placeholder="Artist">
+    </div>
+    <div class="form-group">
+      <label for="title">Title</label>
+      <input type="email" class="form-control input-sm" id="title" placeholder="Title">
+    </div>
+    <div class="form-group">
+      <label for="url">Youtube link</label>
+      <input type="email" class="form-control input-sm" id="url" placeholder="Youtube link">
+    </div>
+    <button type="submit" class="btn btn-default btn-xs"> Update Track </button>
+  </form>
+</div>
 
-<td id="add-tags-form">
-<form class="form-inline">
+<!-- add tags form -->
+
+<!-- <td> -->
+<form class="form-inline" id="add-tags-form">
   <div class="form-group">
     <label for="tags-input">Add tags</label>
     <input type="text" class="form-control input-sm" id="tags-input" placeholder="">
   </div>
+  <div class="typed-tags">
+  </div>
   <button type="submit" class="btn btn-primary btn-xs">Add</button>
 </form>
-</td>
+<!-- </td> -->
 
+<!-- modal -->
 
 <div class="modal fade js-modal">
   <div class="modal-dialog">
