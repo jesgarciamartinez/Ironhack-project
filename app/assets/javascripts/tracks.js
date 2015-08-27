@@ -28,7 +28,7 @@ tracks.onSubmit = function (event) {
 }
 
 $(document).ready(function(){
-    $('form').on('submit', guests.onSubmit()); //()?
+    $('form').on('submit', tracks.onSubmit()); //()?
 })
 
 // find_or_initialize by

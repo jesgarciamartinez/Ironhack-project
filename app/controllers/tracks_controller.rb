@@ -9,13 +9,10 @@ class TracksController < ApplicationController
 
         @track = Track.new(track_params)
            if @track.save
-            params[:tags].each do |tag|
-              @track.tags << Tag.find_or_create(name: tag)
+              params[:tags].each do |tag|
+              @track.tags << Tag.new(tag_params)
+              # Tag.find_or_create_by(name: tag)
             end
-            #binding.pry
-            # @tracks = Track.where(user_id: current_user).order('DESC')
-            # thing = format.json {undo:'Track was successfully created .'}
-            # render thing
 
             render json: @track.to_json
 
@@ -47,5 +44,9 @@ class TracksController < ApplicationController
 
     def track_params
       params.require(:track).permit(:artist, :title, :url, :user_id)
+    end
+
+    def tag_params
+      params.require(:tag).permit(:name)
     end
 end
