@@ -1,5 +1,6 @@
 class TracksController < ApplicationController
     #before_action :authenticate_user!
+    #skip_before_action :verify_authenticity_token, only: [:create]
     # extension stopped working, had to remove authentication check and hard-code user_id = 1 in create, update
     def create
 
