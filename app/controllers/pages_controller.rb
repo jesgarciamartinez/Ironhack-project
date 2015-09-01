@@ -5,7 +5,7 @@ class PagesController < ApplicationController
         unless user_signed_in?
             render 'pages/cover'
         else
-            @tracks = Track.where(user_id: current_user)
+            @tracks = Track.where(user_id: current_user).order('id DESC')
             render 'pages/tracks'
         end
         #render 'pages/index' lo hace por defecto

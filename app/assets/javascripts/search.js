@@ -1,6 +1,6 @@
 
 
-var tags = ['techno'];
+
 //GET Youtube videos, render in a modal,
 var arrayPost = [];
 $('#search-form').on('submit', function search() {
@@ -48,6 +48,8 @@ $('body').on('click','.submit-button',function(event){
     var id = this.id;
     var url = '/tracks';
     $('.js-modal').modal('hide');
-    var request = $.post(url, {track: arrayPost[id], tags: tags}); //tag: tag
-    request.done(function(response){console.log(response)})
+    var request = $.post(url, {track: arrayPost[id], tags: tags});
+    request.done(function(response){
+      console.log(response)
+    })
 });

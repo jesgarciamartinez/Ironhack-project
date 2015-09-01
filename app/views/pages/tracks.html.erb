@@ -1,4 +1,5 @@
 
+<!-- video, profile/signout -->
 
 <div class="container-fluid">
   <div class="row">
@@ -16,9 +17,13 @@
 
 <hr>
 
+<!-- sidebar and tracks table -->
+
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-2">
+
+      <!-- search form -->
 
       <form class="form-group" id="search-form">
         <label class="control-label">Search Youtube</label>
@@ -30,9 +35,13 @@
         </div>
       </form>
 
+      <!-- new track -->
+
       <div id="new-track-button">
         <%= link_to 'New Track',  tracks_path, class: "btn btn-default btn-xs pagination-centered" %>
       </div>
+
+      <!-- Tags -->
 
       <div>
         <a class="btn btn-default btn-lg btn-block" id="tags-button">Tags</a>
@@ -42,25 +51,27 @@
         <div class="col-md-4">
           <ul>
             <li>
-              Initial Tags (OR)
+              <!-- Initial Tags (OR) -->
             </li>
           </ul>
         </div>
         <div class="col-md-4 left-border-outline">
           <ul>
             <li>
-              Additional Tags (AND)
+              <!-- Additional Tags (AND) -->
             </li>
           </ul>
         </div>
         <div class="col-md-4 left-border-outline">
           <ul>
             <li>
-              Excluded Tags (NOT)
+              <!-- Excluded Tags (NOT) -->
             </li>
           </ul>
         </div>
       </div>
+
+      <!-- Playlists -->
 
       <div>
         <a class="btn btn-default btn-lg btn-block" id="playlists-button">Playlists</a>
@@ -70,6 +81,8 @@
         Playlists
       </div>
     </div>
+
+    <!-- tracks table -->
 
     <div class="col-md-9 left-border-outline">
 
@@ -117,6 +130,7 @@
 <hr>
 
 <!-- update form -->
+
 <div class="row" id="update-form">
   <form class="form-inline">
     <input name="_method" type="hidden" value="patch" />
